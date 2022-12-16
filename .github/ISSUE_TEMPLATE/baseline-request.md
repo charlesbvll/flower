@@ -24,13 +24,16 @@ Otherwise, you can just remove this section.
 
 
 <!-- Leave everything below untouched -->
-### For first time contributers
+<details>
+    <summary><h3> For first time contributers</h3></summary>
 
 - [ ]  Read the [`first contribution` doc](TODO)
 - [ ]  Complete the Flower tutorial
 - [ ]  Read the Flower Baselines docs to get an overview:
     - [ ]  [https://flower.dev/docs/using-baselines.html](https://flower.dev/docs/using-baselines.html)
     - [ ]  [https://flower.dev/docs/contributing-baselines.html](https://flower.dev/docs/contributing-baselines.html)
+
+</details>
 
 ### Implementation 
 
