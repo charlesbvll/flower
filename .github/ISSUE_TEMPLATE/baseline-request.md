@@ -1,29 +1,31 @@
 ---
 name: Baseline request
 about: Suggest a new baseline
-title: Add [BASELINE] baseline
-labels: ''
+title: Add [BASELINE_NAME] baseline
+labels: 'new baseline'
 assignees: ''
 
 ---
 
 **What paper would you like to be implemented as a baseline?**
-Please provide the authors, title, and link to the abstract of the paper.
+
+- _Author(s)_
+- _Year_
+- _Title_
+- _Link (ideally an arxiv.org/abs/* link) to abstract_
 
 **Why would you like this baseline to be implemented?**
-Quickly give reasons why, if any, this paper should be implemented before others.
 
-## Implementation
+_Quickly give reasons why, if any, this paper should be implemented before others._
+
+<!-- Leave everything below untouched -->
+## Implementation 
 
 ### Prep - understand the scope
 
 It’s recommended to do the following items in that order:
 
-- [ ]  Read the original FL paper: [https://arxiv.org/abs/1602.05629](https://arxiv.org/abs/1602.05629)
-- [ ]  Complete the Flower tutorial
-- [ ]  Read the Flower Baselines docs to get an overview:
-    - [ ]  [https://flower.dev/docs/using-baselines.html](https://flower.dev/docs/using-baselines.html)
-    - [ ]  [https://flower.dev/docs/contributing-baselines.html](https://flower.dev/docs/contributing-baselines.html)
+- [ ]  Read the paper linked above
 - [ ]  Create the directory structure in Flower Baselines (just the `__init__.py`files and a README)
 - [ ]  Before starting to write code, write down all of the specs of this experiment in a README (dataset, partitioning, model, number of clients, all hyperparameters, …)
 - [ ]  Open a draft PR
@@ -35,12 +37,16 @@ Everything up to this point should be pretty mechanical, the goal is to get a si
 - [ ]  Implement some form of dataset loading and partitioning in a separate `dataset.py` (doesn’t have to match the paper exactly)
 - [ ]  Implement the model in PyTorch
 - [ ]  Write a test that shows that the model has the number of parameters mentioned in the paper
-- [ ]  Implement the federated learning setup outlined in the paper, maybe starting with fewer clients (2 or 10 instead of 100)
+- [ ]  Implement the federated learning setup outlined in the paper, maybe starting with fewer clients
+- [ ]  Plot accuracy and loss
 - [ ]  Run it and check if the model starts to converge
 
 ### Align - make it correct
 
 - [ ]  Implement the exact data partitioning outlined in the paper
-- [ ]  Use seeds to make the data loading and partitioning fully reproducible
 - [ ]  Use the exact hyperparameters outlined in the paper
-- [ ] Mark the PR as ready
+
+### Tuning - make it converge
+
+- [ ]  Make it converge to roughly the same accuracy that the paper states
+- [ ]  Mark the PR as ready
