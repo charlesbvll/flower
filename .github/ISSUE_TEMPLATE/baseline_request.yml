@@ -31,11 +31,11 @@ body:
       value: |
         #### If you want to propose a new baseline, please check the PRs if someone already works on it.
         
-        ### Do not touch anything below
+        ## ⚠️ Do not touch anything below ⚠️
   - type: input
     attributes:
       label: Implementation
-      value: "To implement this baseline, it is recommended to do the following items in that order:"
+      value: "#### To implement this baseline, it is recommended to do the following items in that order:"
   - type: textarea
     attributes:
       label: For first time contributors
