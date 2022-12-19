@@ -32,10 +32,19 @@ body:
         #### If you want to propose a new baseline, please check the PRs if someone already works on it.
         
         ### Do not touch anything below
-  - type: textarea
+  - type: input
     attributes:
       label: Implementation
-      value: To implement this baseline, it is recommended to do the following items in that order.
+      value: To implement this baseline, it is recommended to do the following items in that order:
+  - type: textarea
+    attributes:
+      label: For first time contributors
+      value: |
+        - [ ]  Read the [`first contribution` doc](TODO)
+        - [ ]  Complete the Flower tutorial
+        - [ ]  Read the Flower Baselines docs to get an overview:
+            - [ ]  [https://flower.dev/docs/using-baselines.html](https://flower.dev/docs/using-baselines.html)
+            - [ ]  [https://flower.dev/docs/contributing-baselines.html](https://flower.dev/docs/contributing-baselines.html)
   - type: checkboxes
     attributes:
       label: Prep - understand the scope
