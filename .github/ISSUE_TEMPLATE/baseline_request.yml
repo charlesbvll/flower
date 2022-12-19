@@ -4,14 +4,18 @@ labels: ["new baseline, good first issue"]
 title: Add [new_baseline_name] baseline
 
 body:
-  - type: textarea
+  - type: input
     attributes:
-      label: What paper would you like implemented as a baseline (authors, year, title)?
+      label: Paper
+      description: What paper would you like implemented as a baseline ?
+      placeholder: "Authors, year, title"
     validations:
       required: true
-  - type: textarea
+  - type: input
     attributes:
-      label: Provide a link (ideally an arxiv.org/abs/* link) to the abstract of the paper.
+      label: Link
+      description: Provide a link (ideally an arxiv.org/abs/* link) to the abstract of the paper.
+      placeholder: https://arxiv.org/abs/1608.03452
     validations:
       required: true
   - type: textarea
