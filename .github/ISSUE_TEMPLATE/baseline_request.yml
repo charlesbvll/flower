@@ -1,6 +1,7 @@
 name: Baseline request 2
 description: Suggest a new baseline
-labels: ["new baseline"]
+labels: ["new baseline, good first issue"]
+title: Add [new_baseline_name] baseline
 
 body:
   - type: textarea
@@ -18,16 +19,13 @@ body:
       label: Maybe give motivations about why the paper should be implemented as a baseline.
     validations:
       required: false
+  - type: textarea
+    attributes:
+      label: Is there something else you want to add?
   - type: markdown
     attributes:
       value: |
         #### If you want to propose a new baseline, please check the PRs if someone already works on it.
-
-        **What paper would you like to be implemented as a baseline?**
-        Please provide the authors, title, and link to the abstract of the paper.
-
-        **Why would you like this baseline to be implemented?**
-        Quickly give reasons why, if any, this paper should be implemented before others.
 
         ## Implementation
 
@@ -63,7 +61,3 @@ body:
 
         - [ ]  Make it converge to roughly the same accuracy that the paper states
         - [ ]  Mark the PR as ready
-
-  - type: textarea
-    attributes:
-      label: Is there something else you want to add?
