@@ -39,8 +39,7 @@ body:
       options:
         - label: Read the paper linked above
         - label: Create the directory structure in Flower Baselines (just the `__init__.py`files and a README)
-        - label: Before starting to write code, 
-        write down all of the specs of this experiment in a README (dataset, partitioning, model, number of clients, all hyperparameters, …)
+        - label: Before starting to write code, write down all of the specs of this experiment in a README (dataset, partitioning, model, number of clients, all hyperparameters, …)
         - label: Open a draft PR
   - type: checkboxes
     attributes:
