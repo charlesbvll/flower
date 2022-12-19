@@ -31,11 +31,14 @@ body:
       value: |
         #### If you want to propose a new baseline, please check the PRs if someone already works on it.
         
-        #### Do not touch anything below
+        ### Do not touch anything below
+  - type: textarea
+    attributes:
+      label: Implementation
+      value: To implement this baseline, it is recommended to do the following items in that order.
   - type: checkboxes
     attributes:
       label: Prep - understand the scope
-      description: It’s recommended to do the following items in that order
       options:
         - label: Read the paper linked above
         - label: Create the directory structure in Flower Baselines (just the `__init__.py`files and a README)
@@ -44,7 +47,6 @@ body:
   - type: checkboxes
     attributes:
       label: Implement - make it work
-      description: Everything up to this point should be pretty mechanical, the goal is to get a simple version of this working as quickly as possible, which means a model that’s starting to converge (doesn’t have to be good).
       options:
         - label: Implement some form of dataset loading and partitioning in a separate `dataset.py` (doesn’t have to match the paper exactly)
         - label: Implement the model in PyTorch
