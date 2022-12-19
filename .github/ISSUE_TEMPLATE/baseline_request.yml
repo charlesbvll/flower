@@ -20,7 +20,7 @@ body:
       required: false
   - type: markdown
     attributes:
-      value: >
+      value: |
         #### If you want to propose a new baseline, please check the PRs if someone already works on it.
 
         **What paper would you like to be implemented as a baseline?**
