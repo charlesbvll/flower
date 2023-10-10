@@ -15,6 +15,7 @@ jobs:
       - name: Download wheel
         run: |
             tag_name=$(echo "${GITHUB_REF_NAME}" | cut -c2-)
+            echo "TAG_NAME=$tag_name" >> "$GITHUB_ENV"
             
             wheel_name="flwr-${tag_name}-py3-none-any.whl"
             echo "WHEEL_NAME=$wheel_name" >> "$GITHUB_ENV"
@@ -36,8 +37,9 @@ jobs:
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
-          body: ${BODY}
+          body: ${{ env.BODY }}
           draft: true
+          name: Flower ${{ env.TAG_NAME }}
           files: |
-            ${WHEEL_NAME}
-            ${TAR_NAME}
+            ${{ env.WHEEL_NAME }}
+            ${{ env.TAR_NAME }}
