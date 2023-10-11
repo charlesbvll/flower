@@ -31,12 +31,8 @@ jobs:
         run: ./dev/test-wheel.sh
       - name: Debug
         run: |
-          echo HEAD_REF
-          echo ${{ github.head_ref }}
-          echo HEAD_OR_REF
-          echo ${{ 'test'github.head_ref || 'main_test'github.ref_name }}
-          echo Done
-          echo s3://artifact.flower.dev/py/${{ "pr/"github.head_ref || github.ref_name }}/$sha_short
+          [ -z "${{ github.head_ref }}" ] && ( dir="pr/${{ github.head_ref }}" ) || ( dir="${{ github.ref_name }}" )
+          echo s3://artifact.flower.dev/py/$dir/$sha_short
       - name: Upload wheel
         if: ${{ github.repository == 'adap/flower' && !github.event.pull_request.head.repo.fork }}
         id: upload
