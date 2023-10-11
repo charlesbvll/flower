@@ -29,7 +29,6 @@ design of Flower is based on a few guiding principles:
 
 * **Extendable**: Flower originated from a research project at the University of
   Oxford, so it was built with AI research in mind. Many components can be
-  extended and overridden to build new state-of-the-art systems.
 
 * **Framework-agnostic**: Different machine learning frameworks have different
   strengths. Flower can be used with any machine learning framework, for
