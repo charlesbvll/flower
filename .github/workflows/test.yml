@@ -36,7 +36,9 @@ jobs:
             curl $tar_url --output $tar_name
       - name: Generate body
         run: |
-          ./dev/get-latest-changelog.sh >> body.md
+          echo "$(./dev/get-latest-changelog.sh)"
+          echo "$(./dev/get-latest-changelog.sh)" >> body.md
+          echo "************************`"
           cat body.md
       - name: Release
         uses: softprops/action-gh-release@v1
