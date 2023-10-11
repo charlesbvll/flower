@@ -29,6 +29,13 @@ jobs:
         run: ./dev/build.sh
       - name: Test wheel
         run: ./dev/test-wheel.sh
+      - name: Debug
+        run: |
+          echo HEAD_REF
+          echo ${{ github.head_ref }}
+          echo HEAD_OR_REF
+          echo ${{ github.head_ref || github.ref_name }}
+          echo Done
       - name: Upload wheel
         if: ${{ github.repository == 'adap/flower' && !github.event.pull_request.head.repo.fork }}
         id: upload
