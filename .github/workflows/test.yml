@@ -35,11 +35,13 @@ jobs:
             echo $tar_url
             curl $tar_url --output $tar_name
       - name: Generate body
-        run: ./dev/get-latest-changelog.sh >> body.txt
+        run: |
+          ./dev/get-latest-changelog.sh >> body.md
+          cat body.md
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
-          body_path: body.txt
+          body_path: ./body.md
           draft: true
           name: Flower ${{ env.TAG_NAME }}
           files: |
