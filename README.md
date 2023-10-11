@@ -41,7 +41,7 @@ design of Flower is based on a few guiding principles:
 * **Understandable**: Flower is written with maintainability in mind. The
   community is encouraged to both read and contribute to the codebase.
 
-Meet the amazing Flower community on [flower.dev](https://flower.dev)!
+Meet the Flower community on [flower.dev](https://flower.dev)!
 
 ## Federated Learning Tutorial
 
