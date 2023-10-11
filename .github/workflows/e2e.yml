@@ -34,7 +34,7 @@ jobs:
           echo HEAD_REF
           echo ${{ github.head_ref }}
           echo HEAD_OR_REF
-          echo ${{ "test" github.head_ref || "main_test" github.ref_name }}
+          echo ${{ 'test'github.head_ref || 'main_test'github.ref_name }}
           echo Done
           echo s3://artifact.flower.dev/py/${{ "pr/"github.head_ref || github.ref_name }}/$sha_short
       - name: Upload wheel
