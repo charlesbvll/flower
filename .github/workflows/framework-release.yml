@@ -1,11 +1,16 @@
-name: Release Workflow
+name: Release New Version
 
 on:
   release:
     types: [released]
-
+    
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref == 'refs/heads/main' && github.run_id || github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+  
 jobs:
-  deploy:
+  publish:
+    name: Release build and publish
     runs-on: ubuntu-latest
     steps:
     - name: Checkout code
