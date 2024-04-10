@@ -2,7 +2,7 @@
 title: Federated Optimization in Heterogeneous Networks
 url: https://arxiv.org/abs/1812.06127
 labels: [image classification, cross-device, stragglers]
-dataset: [mnist]
+dataset: [MNIST]
 ---
 
 # FedProx: Federated Optimization in Heterogeneous Networks
@@ -91,7 +91,7 @@ To run using FedAvg:
 # This is done so to match the experimental setup in the FedProx paper
 python -m fedprox.main --config-name fedavg
 
-# this config can also be overriden from the CLI
+# this config can also be overridden from the CLI
 ```
 
 ## Expected results

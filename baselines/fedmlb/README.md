@@ -2,18 +2,18 @@
 title: Multi-Level Branched Regularization for Federated Learning
 url: https://proceedings.mlr.press/v162/kim22a.html
 labels: [data heterogeneity, knowledge distillation, image classification] 
-dataset: [cifar100, tiny-imagenet] 
+dataset: [CIFAR-100, Tiny-ImageNet] 
 ---
 
-# *_FedMLB_*
+# FedMLB: Multi-Level Branched Regularization for Federated Learning
 
 > Note: If you use this baseline in your work, please remember to cite the original authors of the paper as well as the Flower paper.
 
-****Paper:**** [proceedings.mlr.press/v162/kim22a.html](https://proceedings.mlr.press/v162/kim22a.html)
+**Paper:** [proceedings.mlr.press/v162/kim22a.html](https://proceedings.mlr.press/v162/kim22a.html)
 
-****Authors:**** Jinkyu Kim, Geeho Kim, Bohyung Han
+**Authors:** Jinkyu Kim, Geeho Kim, Bohyung Han
 
-****Abstract:**** *_A critical challenge of federated learning is data
+**Abstract:** *_A critical challenge of federated learning is data
 heterogeneity and imbalance across clients, which
 leads to inconsistency between local networks and
 unstable convergence of global models. To alleviate
@@ -37,7 +37,7 @@ The source code is available in our project page._*
 
 ## About this baseline
 
-****What’s implemented:**** The code in this directory reproduces the results for FedMLB, FedAvg, and FedAvg+KD.
+**What’s implemented:** The code in this directory reproduces the results for FedMLB, FedAvg, and FedAvg+KD.
 The reproduced results use the CIFAR-100 dataset or the TinyImagenet dataset. Four settings are available for both
 the datasets,
 1. Moderate-scale with Dir(0.3), 100 clients, 5% participation, balanced dataset.
@@ -45,32 +45,32 @@ the datasets,
 3. Moderate-scale with Dir(0.6), 100 clients, 5% participation rate, balanced dataset.
 4. Large-scale experiments with Dir(0.6), 500 clients, 2% participation rate, balanced dataset.
 
-****Datasets:**** CIFAR-100, Tiny-ImageNet.
+**Datasets:** CIFAR-100, Tiny-ImageNet.
 
-****Hardware Setup:**** The code in this repository has been tested on a Linux machine with 64GB RAM. 
+**Hardware Setup:** The code in this repository has been tested on a Linux machine with 64GB RAM. 
 Be aware that in the default config the memory usage can exceed 10GB.
 
-****Contributors:**** Alessio Mora (University of Bologna, PhD, alessio.mora@unibo.it).
+**Contributors:** Alessio Mora (University of Bologna, PhD, alessio.mora@unibo.it).
 
 ## Experimental Setup
 
-****Task:**** Image classification
+**Task:** Image classification
 
-****Model:**** ResNet-18.
+**Model:** ResNet-18.
 
-****Dataset:**** Four settings are available for CIFAR-100,
+**Dataset:** Four settings are available for CIFAR-100,
 1. Moderate-scale with Dir(0.3), 100 clients, 5% participation, balanced dataset (500 examples per client).
 2. Large-scale experiments with Dir(0.3), 500 clients, 2% participation rate, balanced dataset (100 examples per client).
 3. Moderate-scale with Dir(0.6), 100 clients, 5% participation rate, balanced dataset (500 examples per client).
 4. Large-scale experiments with Dir(0.6), 500 clients, 2% participation rate, balanced dataset (100 examples per client).
 
-****Dataset:**** Four settings are available for Tiny-Imagenet,
+**Dataset:** Four settings are available for Tiny-Imagenet,
 1. Moderate-scale with Dir(0.3), 100 clients, 5% participation, balanced dataset (1000 examples per client).
 2. Large-scale experiments with Dir(0.3), 500 clients, 2% participation rate, balanced dataset (200 examples per client).
 3. Moderate-scale with Dir(0.6), 100 clients, 5% participation rate, balanced dataset (1000 examples per client).
 4. Large-scale experiments with Dir(0.6), 500 clients, 2% participation rate, balanced dataset (200 examples per client).
 
-****Training Hyperparameters:**** 
+**Training Hyperparameters:** 
 
 | Hyperparameter  | Description | Default Value |
 | ------------- | ------------- | ------------- |
@@ -222,7 +222,7 @@ You can override settings directly from the command line in this way:
 ```bash
 python -m fedmlb.main clients_per_round=10 # this will run using 10 clients per round instead of 5 clients as the default config 
 
-# this will select the dataset partitioned with 0.6 concentration paramater instead of 0.3 as the default config
+# this will select the dataset partitioned with 0.6 concentration parameter instead of 0.3 as the default config
 python -m fedmlb.main dataset_config.alpha_dirichlet=0.6
 ```
 
@@ -249,7 +249,7 @@ python -m fedmlb.main dataset_config.alpha_dirichlet=0.6 total_clients=500 clien
 ```
 
 #### Tiny-Imagenet
-For Tiny-ImageNet, as in the orginal paper, batch size of local updates should be set 
+For Tiny-ImageNet, as in the original paper, batch size of local updates should be set 
 to 100 in settings with 100 clients and to 20 in settings with 500 clients;
 this is equal to set the amount of local_updates to 50 (as the default) -- 
 so no change to batch size is required --, in fact
