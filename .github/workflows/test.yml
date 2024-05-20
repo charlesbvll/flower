@@ -8,6 +8,9 @@ jobs:
   ensure-draft:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        
       - name: Ensure PR is draft
         if: github.event.pull_request.draft == false
         run: gh pr ready ${{ github.event.pull_request.number }} --undo
@@ -18,7 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Assign PR to the user
         uses: peter-evans/assign-on-label@v3
@@ -31,7 +34,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Check for merge conflicts
         id: check_conflicts
@@ -51,7 +54,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Check CI status
         id: check_status
