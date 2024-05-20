@@ -17,18 +17,12 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-  assign-pr:
+  assign-author:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Assign PR to the user
-        uses: peter-evans/assign-on-label@v3
+      - uses: toshimaru/auto-author-assign
         with:
-          configuration: |
-            - label: ''
-              assignee: ${{ github.actor }}
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
 
   check-merge-conflicts:
     runs-on: ubuntu-latest
