@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Flower main\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-17 16:09+0200\n"
+"POT-Creation-Date: 2024-06-18 09:41+0000\n"
 "PO-Revision-Date: 2024-06-12 10:09+0000\n"
 "Last-Translator: Yan Gao <y.gaogy@gmail.com>\n"
 "Language: zh_Hans\n"
@@ -8140,7 +8140,6 @@ msgstr ":py:obj:`context <flwr.client.Client.context>`\\"
 #: flwr.server.strategy.strategy.Strategy.initialize_parameters
 #: flwr.server.workflow.secure_aggregation.secagg_workflow.SecAggWorkflow
 #: flwr.server.workflow.secure_aggregation.secaggplus_workflow.SecAggPlusWorkflow
-#: flwr.simulation.app.start_simulation
 #: flwr.simulation.run_simulation.run_simulation of
 msgid "Parameters"
 msgstr "参数"
@@ -8176,8 +8175,7 @@ msgstr "评估指令包含从服务器接收的（全局）模型参数，以及
 #: flwr.server.strategy.strategy.Strategy.configure_evaluate
 #: flwr.server.strategy.strategy.Strategy.configure_fit
 #: flwr.server.strategy.strategy.Strategy.evaluate
-#: flwr.server.strategy.strategy.Strategy.initialize_parameters
-#: flwr.simulation.app.start_simulation of
+#: flwr.server.strategy.strategy.Strategy.initialize_parameters of
 msgid "Returns"
 msgstr "返回"
 
@@ -8209,8 +8207,7 @@ msgstr "评估结果包含本地数据集上的损失值和其他详细信息，
 #: flwr.server.strategy.strategy.Strategy.configure_evaluate
 #: flwr.server.strategy.strategy.Strategy.configure_fit
 #: flwr.server.strategy.strategy.Strategy.evaluate
-#: flwr.server.strategy.strategy.Strategy.initialize_parameters
-#: flwr.simulation.app.start_simulation of
+#: flwr.server.strategy.strategy.Strategy.initialize_parameters of
 msgid "Return type"
 msgstr "返回类型"
 
@@ -12397,16 +12394,6 @@ msgstr "以秒为单位的等待时间，默认为 86400（24 小时）。"
 msgid "**success**"
 msgstr "**success**"
 
-#: ../../source/ref-api/flwr.server.run_driver_api.rst:2
-#, fuzzy
-msgid "run\\_driver\\_api"
-msgstr "flower-driver-api"
-
-#: ../../source/ref-api/flwr.server.run_fleet_api.rst:2
-#, fuzzy
-msgid "run\\_fleet\\_api"
-msgstr "run\\_fleet\\_api"
-
 #: ../../source/ref-api/flwr.server.run_server_app.rst:2
 #, fuzzy
 msgid "run\\_server\\_app"
@@ -12432,7 +12419,7 @@ msgid ""
 "thereof. If no instance is provided, then `start_server` will create one."
 msgstr "服务器实现，可以是 `flwr.server.Server` 或其子类。如果没有提供实例，`start_server` 将创建一个。"
 
-#: flwr.server.app.start_server:9 flwr.simulation.app.start_simulation:28 of
+#: flwr.server.app.start_server:9 of
 msgid ""
 "Currently supported values are `num_rounds` (int, default: 1) and "
 "`round_timeout` in seconds (float, default: None)."
@@ -16397,16 +16384,16 @@ msgstr "运行模拟"
 #: ../../source/ref-api/flwr.simulation.rst:18:<autosummary>:1
 #, fuzzy
 msgid ""
-":py:obj:`start_simulation <flwr.simulation.start_simulation>`\\ \\(\\*\\,"
-" client\\_fn\\[\\, ...\\]\\)"
+":py:obj:`start_simulation <flwr.simulation.start_simulation>`\\ "
+"\\(\\*args\\, \\*\\*kwargs\\)"
 msgstr ""
 ":py:obj:`start_simulation <flwr.simulation.start_simulation>`\\ \\(\\*\\,"
 " client\\_fn\\[\\, ...\\]\\)"
 
 #: ../../source/ref-api/flwr.simulation.rst:18:<autosummary>:1
-#: flwr.simulation.app.start_simulation:1 of
-msgid "Start a Ray-based Flower simulation server."
-msgstr "启动基于 Ray 的Flower模拟服务器。"
+#: flwr.simulation.start_simulation:1 of
+msgid "Log error stating that module `ray` could not be imported."
+msgstr ""
 
 #: ../../source/ref-api/flwr.simulation.rst:18:<autosummary>:1
 #, fuzzy
@@ -16492,140 +16479,6 @@ msgstr "启用后，将只显示 INFO、WARNING 和 ERROR 日志信息。启用�
 #, fuzzy
 msgid "start\\_simulation"
 msgstr "start_simulation"
-
-#: flwr.simulation.app.start_simulation:3 of
-msgid ""
-"A function creating client instances. The function must take a single "
-"`str` argument called `cid`. It should return a single client instance of"
-" type Client. Note that the created client instances are ephemeral and "
-"will often be destroyed after a single method invocation. Since client "
-"instances are not long-lived, they should not attempt to carry state over"
-" method invocations. Any state required by the instance (model, dataset, "
-"hyperparameters, ...) should be (re-)created in either the call to "
-"`client_fn` or the call to any of the client methods (e.g., load "
-"evaluation data in the `evaluate` method itself)."
-msgstr ""
-"创建客户端实例的函数。该函数必须接受一个名为 `cid` 的 `str` 参数。它应返回一个 Client "
-"类型的客户端实例。请注意，创建的客户端实例是短暂的，通常在调用一个方法后就会被销毁。由于客户机实例不是长期存在的，它们不应试图在方法调用时携带状态数据。实例所需的任何状态数据（模型、数据集、超参数......）都应在调用"
-" `client_fn` 或任何客户端方法（例如，在 `evaluate` 方法中加载评估数据）时（重新）创建。"
-
-#: flwr.simulation.app.start_simulation:13 of
-msgid ""
-"The total number of clients in this simulation. This must be set if "
-"`clients_ids` is not set and vice-versa."
-msgstr "本次模拟的客户总数。如果未设置 `clients_ids`，则必须设置该参数，反之亦然。"
-
-#: flwr.simulation.app.start_simulation:16 of
-msgid ""
-"List `client_id`s for each client. This is only required if `num_clients`"
-" is not set. Setting both `num_clients` and `clients_ids` with "
-"`len(clients_ids)` not equal to `num_clients` generates an error."
-msgstr ""
-"列出每个客户的 `client_id`。只有在未设置 `num_clients` "
-"时才需要这样做。同时设置`num_clients`和`clients_ids`，且`len(clients_ids)`不等于`num_clients`，会产生错误。"
-
-#: flwr.simulation.app.start_simulation:20 of
-#, fuzzy
-msgid ""
-"CPU and GPU resources for a single client. Supported keys are `num_cpus` "
-"and `num_gpus`. To understand the GPU utilization caused by `num_gpus`, "
-"as well as using custom resources, please consult the Ray documentation."
-msgstr ""
-"\"num_gpus\"： 0.0` 单个客户端的 CPU 和 GPU 资源。支持的键值为 `num_cpus` 和 `num_gpus`。要了解"
-" `num_gpus` 所导致的 GPU 利用率，以及使用自定义资源的情况，请查阅 Ray 文档。"
-
-#: flwr.simulation.app.start_simulation:25 of
-msgid ""
-"An implementation of the abstract base class `flwr.server.Server`. If no "
-"instance is provided, then `start_server` will create one."
-msgstr "抽象基类 `flwr.server.Server`的实现。如果没有提供实例，`start_server` 将创建一个。"
-
-#: flwr.simulation.app.start_simulation:31 of
-msgid ""
-"An implementation of the abstract base class `flwr.server.Strategy`. If "
-"no strategy is provided, then `start_server` will use "
-"`flwr.server.strategy.FedAvg`."
-msgstr ""
-"抽象基类 `flwr.server.strategy` 的实现。如果没有提供策略，`start_server` 将使用 "
-"`flwr.server.strategy.FedAvg`。"
-
-#: flwr.simulation.app.start_simulation:35 of
-msgid ""
-"An implementation of the abstract base class `flwr.server.ClientManager`."
-" If no implementation is provided, then `start_simulation` will use "
-"`flwr.server.client_manager.SimpleClientManager`."
-msgstr ""
-"抽象基类 `flwr.server.ClientManager` 的实现。如果没有提供实现，`start_simulation` 将使用 "
-"`flwr.server.client_manager.SimpleClientManager`。"
-
-#: flwr.simulation.app.start_simulation:39 of
-msgid ""
-"Optional dictionary containing arguments for the call to `ray.init`. If "
-"ray_init_args is None (the default), Ray will be initialized with the "
-"following default args:  { \"ignore_reinit_error\": True, "
-"\"include_dashboard\": False }  An empty dictionary can be used "
-"(ray_init_args={}) to prevent any arguments from being passed to "
-"ray.init."
-msgstr ""
-"可选字典，包含调用 `ray.init` 时的参数。如果 ray_init_args 为 None（默认值），则将使用以下默认参数初始化 Ray："
-" { \"ignore_reinit_error\"： True, \"include_dashboard\"： False }  "
-"可以使用空字典（ray_init_args={}）来防止向 ray.init 传递任何参数。"
-
-#: flwr.simulation.app.start_simulation:39 of
-msgid ""
-"Optional dictionary containing arguments for the call to `ray.init`. If "
-"ray_init_args is None (the default), Ray will be initialized with the "
-"following default args:"
-msgstr "可选字典，包含调用 `ray.init` 时的参数。如果 ray_init_args 为 None（默认值），则将使用以下默认参数初始化 Ray："
-
-#: flwr.simulation.app.start_simulation:43 of
-msgid "{ \"ignore_reinit_error\": True, \"include_dashboard\": False }"
-msgstr "{ \"ignore_reinit_error\"： True, \"include_dashboard\"： False }"
-
-#: flwr.simulation.app.start_simulation:45 of
-msgid ""
-"An empty dictionary can be used (ray_init_args={}) to prevent any "
-"arguments from being passed to ray.init."
-msgstr "可以使用空字典 (ray_init_args={}) 来防止向 ray.init 传递任何参数。"
-
-#: flwr.simulation.app.start_simulation:48 of
-msgid ""
-"Set to True to prevent `ray.shutdown()` in case "
-"`ray.is_initialized()=True`."
-msgstr "设为 True 可在 `ray.is_initialized()=True` 情况下阻止 `ray.shutdown()` 。"
-
-#: flwr.simulation.app.start_simulation:50 of
-#, fuzzy
-msgid ""
-"Optionally specify the type of actor to use. The actor object, which "
-"persists throughout the simulation, will be the process in charge of "
-"executing a ClientApp wrapping input argument `client_fn`."
-msgstr "可选择指定要使用的actor类型。actor对象将在整个模拟过程中持续存在，它将是负责运行客户端作业（即其 `fit()`方法）的进程。"
-
-#: flwr.simulation.app.start_simulation:54 of
-msgid ""
-"If you want to create your own Actor classes, you might need to pass some"
-" input argument. You can use this dictionary for such purpose."
-msgstr "如果您想创建自己的 Actor 类，可能需要传递一些输入参数。为此，您可以使用本字典。"
-
-#: flwr.simulation.app.start_simulation:57 of
-msgid ""
-"(default: \"DEFAULT\") Optional string (\"DEFAULT\" or \"SPREAD\") for "
-"the VCE to choose in which node the actor is placed. If you are an "
-"advanced user needed more control you can use lower-level scheduling "
-"strategies to pin actors to specific compute nodes (e.g. via "
-"NodeAffinitySchedulingStrategy). Please note this is an advanced feature."
-" For all details, please refer to the Ray documentation: "
-"https://docs.ray.io/en/latest/ray-core/scheduling/index.html"
-msgstr ""
-"(默认：\"DEFAULT\"）可选字符串（\"DEFAULT \"或 \"SPREAD\"），供 VCE "
-"选择将行为体放置在哪个节点上。如果你是需要更多控制权的高级用户，可以使用低级调度策略将actor固定到特定计算节点（例如，通过 "
-"NodeAffinitySchedulingStrategy）。请注意，这是一项高级功能。有关详细信息，请参阅 Ray "
-"文档：https://docs.ray.io/en/latest/ray-core/scheduling/index.html"
-
-#: flwr.simulation.app.start_simulation:66 of
-msgid "**hist** -- Object containing metrics from training."
-msgstr "**hist** -- 包含训练指标的对象。"
 
 #: ../../source/ref-changelog.md:1
 msgid "Changelog"
@@ -25816,7 +25669,7 @@ msgid ""
 msgstr "在机器学习中，我们有一个模型和数据。模型可以是一个神经网络（如图所示），也可以是其他东西，比如经典的线性回归。"
 
 #: ../../source/tutorial-series-what-is-federated-learning.ipynb:41
-msgid "|93b02017c78049bbbd5ae456dcb2c91b|"
+msgid "|93da51187d87408481c916612b8d3671|"
 msgstr ""
 
 #: ../../source/tutorial-series-what-is-federated-learning.ipynb:109
@@ -25831,7 +25684,7 @@ msgid ""
 msgstr "我们使用数据来训练模型，以完成一项有用的任务。任务可以是检测图像中的物体、转录音频或玩围棋等游戏。"
 
 #: ../../source/tutorial-series-what-is-federated-learning.ipynb:53
-msgid "|01471150fd5144c080a176b43e92a3ff|"
+msgid "|7a6e86242ecd41489455ddb45492252a|"
 msgstr ""
 
 #: ../../source/tutorial-series-what-is-federated-learning.ipynb:111
@@ -25852,7 +25705,7 @@ msgid ""
 msgstr "它源于智能手机上用户与应用程序的交互、汽车上传感器数据的收集、笔记本电脑上键盘输入的接收，或者智能扬声器上某人试着唱的歌。"
 
 #: ../../source/tutorial-series-what-is-federated-learning.ipynb:67
-msgid "|9bc21c7dbd17444a8f070c60786e3484|"
+msgid "|d9d9ef06556a4822a02ba9a02079dd46|"
 msgstr ""
 
 #: ../../source/tutorial-series-what-is-federated-learning.ipynb:113
@@ -25870,7 +25723,7 @@ msgstr ""
 "\"通常不只是一个地方，而是很多地方。它可能是多个运行同一应用程序的设备。但也可能是多个组织，都在为同一任务生成数据。"
 
 #: ../../source/tutorial-series-what-is-federated-learning.ipynb:79
-msgid "|3047bbce54b34099ae559963d0420d79|"
+msgid "|7aa92bb1a53d4a18be6ca9cd8e807b80|"
 msgstr ""
 
 #: ../../source/tutorial-series-what-is-federated-learning.ipynb:115
@@ -25886,7 +25739,7 @@ msgid ""
 msgstr "因此，要使用机器学习或任何类型的数据分析，过去使用的方法是在中央服务器上收集所有数据。这个服务器可以在数据中心的某个地方，也可以在云端的某个地方。"
 
 #: ../../source/tutorial-series-what-is-federated-learning.ipynb:91
-msgid "|e9f8ce948593444fb838d2f354c7ec5d|"
+msgid "|3d9a3d3a730744f682f3cd01cc7879e0|"
 msgstr ""
 
 #: ../../source/tutorial-series-what-is-federated-learning.ipynb:117
@@ -25901,7 +25754,7 @@ msgid ""
 msgstr "一旦所有数据都收集到一处，我们最终就可以使用机器学习算法在数据上训练我们的模型。这就是我们基本上一直依赖的机器学习方法。"
 
 #: ../../source/tutorial-series-what-is-federated-learning.ipynb:103
-msgid "|c24c1478b30e4f74839208628a842d1e|"
+msgid "|052adfd2f9cb48f2a01ab06deee54ccf|"
 msgstr ""
 
 #: ../../source/tutorial-series-what-is-federated-learning.ipynb:119
@@ -25921,7 +25774,7 @@ msgid ""
 msgstr "我们刚刚看到的经典机器学习方法可以在某些情况下使用。很好的例子包括对假日照片进行分类或分析网络流量。在这些案例中，所有数据自然都可以在中央服务器上获得。"
 
 #: ../../source/tutorial-series-what-is-federated-learning.ipynb:138
-msgid "|1b3613d7a58847b59e1d3180802dbc09|"
+msgid "|a6aae450ee714e898e7cc173fb154b3d|"
 msgstr ""
 
 #: ../../source/tutorial-series-what-is-federated-learning.ipynb:173
@@ -25936,7 +25789,7 @@ msgid ""
 msgstr "但这种方法并不适用于许多其他情况。例如，集中服务器上没有数据，或者一台服务器上的数据不足以训练出一个好的模型。"
 
 #: ../../source/tutorial-series-what-is-federated-learning.ipynb:150
-msgid "|9980b5213db547d0b8024a50992b9e3f|"
+msgid "|26ee8c777db64c17b5d504e1d515ed75|"
 msgstr ""
 
 #: ../../source/tutorial-series-what-is-federated-learning.ipynb:175
@@ -26084,7 +25937,7 @@ msgid ""
 msgstr "我们首先在服务器上初始化模型。这与经典的集中式学习完全相同：我们随机或从先前保存的检查点初始化模型参数。"
 
 #: ../../source/tutorial-series-what-is-federated-learning.ipynb:210
-msgid "|c7afb4c92d154bfaa5e8cb9a150e17f1|"
+msgid "|ebc06ef5db1b4a60a834ff1c1572833f|"
 msgstr ""
 
 #: ../../source/tutorial-series-what-is-federated-learning.ipynb:307
@@ -26108,7 +25961,7 @@ msgid ""
 msgstr "接下来，我们会将全局模型的参数发送到连接的客户端节点（如智能手机等边缘设备或企业的服务器）。这是为了确保每个参与节点都使用相同的模型参数开始本地训练。我们通常只使用几个连接节点，而不是所有节点。这样做的原因是，选择越来越多的客户端节点会导致收益递减。"
 
 #: ../../source/tutorial-series-what-is-federated-learning.ipynb:225
-msgid "|032eb6fed6924ac387b9f13854919196|"
+msgid "|47060f2a27ca4b8c9a36c233278bea9b|"
 msgstr ""
 
 #: ../../source/tutorial-series-what-is-federated-learning.ipynb:309
@@ -26134,7 +25987,7 @@ msgstr ""
 "（mini-batches）。"
 
 #: ../../source/tutorial-series-what-is-federated-learning.ipynb:240
-msgid "|fbf225add7fd4df5a9bf25a95597d954|"
+msgid "|2746764dfe4a4c8d94c87f2c81aa9c0e|"
 msgstr ""
 
 #: ../../source/tutorial-series-what-is-federated-learning.ipynb:311
@@ -26157,7 +26010,7 @@ msgid ""
 msgstr "经过本地训练后，每个客户节点最初收到的模型参数都会略有不同。参数之所以不同，是因为每个客户端节点的本地数据集中都有不同的数据。然后，客户端节点将这些模型更新发回服务器。它们发送的模型更新既可以是完整的模型参数，也可以只是本地训练过程中积累的梯度。"
 
 #: ../../source/tutorial-series-what-is-federated-learning.ipynb:255
-msgid "|7efbe3d29d8349b89594e8947e910525|"
+msgid "|fc179b92326a42b69dff37fecdd8e9f2|"
 msgstr ""
 
 #: ../../source/tutorial-series-what-is-federated-learning.ipynb:313
@@ -26203,7 +26056,7 @@ msgstr ""
 " 100 个示例的 10 倍。"
 
 #: ../../source/tutorial-series-what-is-federated-learning.ipynb:273
-msgid "|329fb3c04c744eda83bb51fa444c2266|"
+msgid "|d0720797ae4744beb29dfd44567a12d2|"
 msgstr ""
 
 #: ../../source/tutorial-series-what-is-federated-learning.ipynb:315
@@ -26310,7 +26163,7 @@ msgstr ""
 "为联邦学习、分析和评估提供了一种统一的方法。它允许用户联邦化任何工作负载、任何 ML 框架和任何编程语言。"
 
 #: ../../source/tutorial-series-what-is-federated-learning.ipynb:334
-msgid "|c00bf2750bc24d229737a0fe1395f0fc|"
+msgid "|c177906dcd404631b9bf0a670355740b|"
 msgstr ""
 
 #: ../../source/tutorial-series-what-is-federated-learning.ipynb:340
@@ -28653,4 +28506,221 @@ msgstr ""
 
 #~ msgid "|83a8daee45da4a98b8d6f24ae098fc50|"
 #~ msgstr "|83a8daee45da4a98b8d6f24ae098fc50|"
+
+#~ msgid "run\\_driver\\_api"
+#~ msgstr "flower-driver-api"
+
+#~ msgid "run\\_fleet\\_api"
+#~ msgstr "run\\_fleet\\_api"
+
+#~ msgid "Start a Ray-based Flower simulation server."
+#~ msgstr "启动基于 Ray 的Flower模拟服务器。"
+
+#~ msgid ""
+#~ "A function creating client instances. "
+#~ "The function must take a single "
+#~ "`str` argument called `cid`. It should"
+#~ " return a single client instance of"
+#~ " type Client. Note that the created"
+#~ " client instances are ephemeral and "
+#~ "will often be destroyed after a "
+#~ "single method invocation. Since client "
+#~ "instances are not long-lived, they "
+#~ "should not attempt to carry state "
+#~ "over method invocations. Any state "
+#~ "required by the instance (model, "
+#~ "dataset, hyperparameters, ...) should be "
+#~ "(re-)created in either the call to "
+#~ "`client_fn` or the call to any of"
+#~ " the client methods (e.g., load "
+#~ "evaluation data in the `evaluate` method"
+#~ " itself)."
+#~ msgstr ""
+#~ "创建客户端实例的函数。该函数必须接受一个名为 `cid` 的 `str` 参数。它应返回一个"
+#~ " Client "
+#~ "类型的客户端实例。请注意，创建的客户端实例是短暂的，通常在调用一个方法后就会被销毁。由于客户机实例不是长期存在的，它们不应试图在方法调用时携带状态数据。实例所需的任何状态数据（模型、数据集、超参数......）都应在调用"
+#~ " `client_fn` 或任何客户端方法（例如，在 `evaluate` "
+#~ "方法中加载评估数据）时（重新）创建。"
+
+#~ msgid ""
+#~ "The total number of clients in "
+#~ "this simulation. This must be set "
+#~ "if `clients_ids` is not set and "
+#~ "vice-versa."
+#~ msgstr "本次模拟的客户总数。如果未设置 `clients_ids`，则必须设置该参数，反之亦然。"
+
+#~ msgid ""
+#~ "List `client_id`s for each client. This"
+#~ " is only required if `num_clients` is"
+#~ " not set. Setting both `num_clients` "
+#~ "and `clients_ids` with `len(clients_ids)` not"
+#~ " equal to `num_clients` generates an "
+#~ "error."
+#~ msgstr ""
+#~ "列出每个客户的 `client_id`。只有在未设置 `num_clients` "
+#~ "时才需要这样做。同时设置`num_clients`和`clients_ids`，且`len(clients_ids)`不等于`num_clients`，会产生错误。"
+
+#~ msgid ""
+#~ "CPU and GPU resources for a single"
+#~ " client. Supported keys are `num_cpus` "
+#~ "and `num_gpus`. To understand the GPU"
+#~ " utilization caused by `num_gpus`, as "
+#~ "well as using custom resources, please"
+#~ " consult the Ray documentation."
+#~ msgstr ""
+#~ "\"num_gpus\"： 0.0` 单个客户端的 CPU 和 GPU "
+#~ "资源。支持的键值为 `num_cpus` 和 `num_gpus`。要了解 "
+#~ "`num_gpus` 所导致的 GPU 利用率，以及使用自定义资源的情况，请查阅 Ray"
+#~ " 文档。"
+
+#~ msgid ""
+#~ "An implementation of the abstract base"
+#~ " class `flwr.server.Server`. If no instance"
+#~ " is provided, then `start_server` will "
+#~ "create one."
+#~ msgstr "抽象基类 `flwr.server.Server`的实现。如果没有提供实例，`start_server` 将创建一个。"
+
+#~ msgid ""
+#~ "An implementation of the abstract base"
+#~ " class `flwr.server.Strategy`. If no "
+#~ "strategy is provided, then `start_server` "
+#~ "will use `flwr.server.strategy.FedAvg`."
+#~ msgstr ""
+#~ "抽象基类 `flwr.server.strategy` 的实现。如果没有提供策略，`start_server`"
+#~ " 将使用 `flwr.server.strategy.FedAvg`。"
+
+#~ msgid ""
+#~ "An implementation of the abstract base"
+#~ " class `flwr.server.ClientManager`. If no "
+#~ "implementation is provided, then "
+#~ "`start_simulation` will use "
+#~ "`flwr.server.client_manager.SimpleClientManager`."
+#~ msgstr ""
+#~ "抽象基类 `flwr.server.ClientManager` "
+#~ "的实现。如果没有提供实现，`start_simulation` 将使用 "
+#~ "`flwr.server.client_manager.SimpleClientManager`。"
+
+#~ msgid ""
+#~ "Optional dictionary containing arguments for"
+#~ " the call to `ray.init`. If "
+#~ "ray_init_args is None (the default), Ray"
+#~ " will be initialized with the "
+#~ "following default args:  { "
+#~ "\"ignore_reinit_error\": True, \"include_dashboard\": "
+#~ "False }  An empty dictionary can "
+#~ "be used (ray_init_args={}) to prevent "
+#~ "any arguments from being passed to "
+#~ "ray.init."
+#~ msgstr ""
+#~ "可选字典，包含调用 `ray.init` 时的参数。如果 ray_init_args 为"
+#~ " None（默认值），则将使用以下默认参数初始化 Ray： { "
+#~ "\"ignore_reinit_error\"： True, \"include_dashboard\"： "
+#~ "False }  可以使用空字典（ray_init_args={}）来防止向 ray.init "
+#~ "传递任何参数。"
+
+#~ msgid ""
+#~ "Optional dictionary containing arguments for"
+#~ " the call to `ray.init`. If "
+#~ "ray_init_args is None (the default), Ray"
+#~ " will be initialized with the "
+#~ "following default args:"
+#~ msgstr ""
+#~ "可选字典，包含调用 `ray.init` 时的参数。如果 ray_init_args 为"
+#~ " None（默认值），则将使用以下默认参数初始化 Ray："
+
+#~ msgid "{ \"ignore_reinit_error\": True, \"include_dashboard\": False }"
+#~ msgstr "{ \"ignore_reinit_error\"： True, \"include_dashboard\"： False }"
+
+#~ msgid ""
+#~ "An empty dictionary can be used "
+#~ "(ray_init_args={}) to prevent any arguments"
+#~ " from being passed to ray.init."
+#~ msgstr "可以使用空字典 (ray_init_args={}) 来防止向 ray.init 传递任何参数。"
+
+#~ msgid ""
+#~ "Set to True to prevent `ray.shutdown()`"
+#~ " in case `ray.is_initialized()=True`."
+#~ msgstr "设为 True 可在 `ray.is_initialized()=True` 情况下阻止 `ray.shutdown()` 。"
+
+#~ msgid ""
+#~ "Optionally specify the type of actor "
+#~ "to use. The actor object, which "
+#~ "persists throughout the simulation, will "
+#~ "be the process in charge of "
+#~ "executing a ClientApp wrapping input "
+#~ "argument `client_fn`."
+#~ msgstr "可选择指定要使用的actor类型。actor对象将在整个模拟过程中持续存在，它将是负责运行客户端作业（即其 `fit()`方法）的进程。"
+
+#~ msgid ""
+#~ "If you want to create your own "
+#~ "Actor classes, you might need to "
+#~ "pass some input argument. You can "
+#~ "use this dictionary for such purpose."
+#~ msgstr "如果您想创建自己的 Actor 类，可能需要传递一些输入参数。为此，您可以使用本字典。"
+
+#~ msgid ""
+#~ "(default: \"DEFAULT\") Optional string "
+#~ "(\"DEFAULT\" or \"SPREAD\") for the VCE"
+#~ " to choose in which node the "
+#~ "actor is placed. If you are an "
+#~ "advanced user needed more control you"
+#~ " can use lower-level scheduling "
+#~ "strategies to pin actors to specific "
+#~ "compute nodes (e.g. via "
+#~ "NodeAffinitySchedulingStrategy). Please note this"
+#~ " is an advanced feature. For all "
+#~ "details, please refer to the Ray "
+#~ "documentation: https://docs.ray.io/en/latest/ray-"
+#~ "core/scheduling/index.html"
+#~ msgstr ""
+#~ "(默认：\"DEFAULT\"）可选字符串（\"DEFAULT \"或 \"SPREAD\"），供 "
+#~ "VCE "
+#~ "选择将行为体放置在哪个节点上。如果你是需要更多控制权的高级用户，可以使用低级调度策略将actor固定到特定计算节点（例如，通过 "
+#~ "NodeAffinitySchedulingStrategy）。请注意，这是一项高级功能。有关详细信息，请参阅 Ray "
+#~ "文档：https://docs.ray.io/en/latest/ray-core/scheduling/index.html"
+
+#~ msgid "**hist** -- Object containing metrics from training."
+#~ msgstr "**hist** -- 包含训练指标的对象。"
+
+#~ msgid "|93b02017c78049bbbd5ae456dcb2c91b|"
+#~ msgstr ""
+
+#~ msgid "|01471150fd5144c080a176b43e92a3ff|"
+#~ msgstr ""
+
+#~ msgid "|9bc21c7dbd17444a8f070c60786e3484|"
+#~ msgstr ""
+
+#~ msgid "|3047bbce54b34099ae559963d0420d79|"
+#~ msgstr ""
+
+#~ msgid "|e9f8ce948593444fb838d2f354c7ec5d|"
+#~ msgstr ""
+
+#~ msgid "|c24c1478b30e4f74839208628a842d1e|"
+#~ msgstr ""
+
+#~ msgid "|1b3613d7a58847b59e1d3180802dbc09|"
+#~ msgstr ""
+
+#~ msgid "|9980b5213db547d0b8024a50992b9e3f|"
+#~ msgstr ""
+
+#~ msgid "|c7afb4c92d154bfaa5e8cb9a150e17f1|"
+#~ msgstr ""
+
+#~ msgid "|032eb6fed6924ac387b9f13854919196|"
+#~ msgstr ""
+
+#~ msgid "|fbf225add7fd4df5a9bf25a95597d954|"
+#~ msgstr ""
+
+#~ msgid "|7efbe3d29d8349b89594e8947e910525|"
+#~ msgstr ""
+
+#~ msgid "|329fb3c04c744eda83bb51fa444c2266|"
+#~ msgstr ""
+
+#~ msgid "|c00bf2750bc24d229737a0fe1395f0fc|"
+#~ msgstr ""
 

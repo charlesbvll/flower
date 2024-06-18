@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Flower Docs\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-06-17 16:09+0200\n"
+"POT-Creation-Date: 2024-06-18 09:41+0000\n"
 "PO-Revision-Date: 2023-09-05 17:54+0000\n"
 "Last-Translator: Charles Beauville <charles@flower.ai>\n"
 "Language: fr\n"
@@ -8490,7 +8490,6 @@ msgstr ""
 #: flwr.server.strategy.strategy.Strategy.initialize_parameters
 #: flwr.server.workflow.secure_aggregation.secagg_workflow.SecAggWorkflow
 #: flwr.server.workflow.secure_aggregation.secaggplus_workflow.SecAggPlusWorkflow
-#: flwr.simulation.app.start_simulation
 #: flwr.simulation.run_simulation.run_simulation of
 #, fuzzy
 msgid "Parameters"
@@ -8527,8 +8526,7 @@ msgstr ""
 #: flwr.server.strategy.strategy.Strategy.configure_evaluate
 #: flwr.server.strategy.strategy.Strategy.configure_fit
 #: flwr.server.strategy.strategy.Strategy.evaluate
-#: flwr.server.strategy.strategy.Strategy.initialize_parameters
-#: flwr.simulation.app.start_simulation of
+#: flwr.server.strategy.strategy.Strategy.initialize_parameters of
 #, fuzzy
 msgid "Returns"
 msgstr "Ressources"
@@ -8561,8 +8559,7 @@ msgstr ""
 #: flwr.server.strategy.strategy.Strategy.configure_evaluate
 #: flwr.server.strategy.strategy.Strategy.configure_fit
 #: flwr.server.strategy.strategy.Strategy.evaluate
-#: flwr.server.strategy.strategy.Strategy.initialize_parameters
-#: flwr.simulation.app.start_simulation of
+#: flwr.server.strategy.strategy.Strategy.initialize_parameters of
 msgid "Return type"
 msgstr ""
 
@@ -12072,15 +12069,6 @@ msgstr ""
 msgid "**success**"
 msgstr ""
 
-#: ../../source/ref-api/flwr.server.run_driver_api.rst:2
-#, fuzzy
-msgid "run\\_driver\\_api"
-msgstr "flower-driver-api"
-
-#: ../../source/ref-api/flwr.server.run_fleet_api.rst:2
-msgid "run\\_fleet\\_api"
-msgstr ""
-
 #: ../../source/ref-api/flwr.server.run_server_app.rst:2
 msgid "run\\_server\\_app"
 msgstr ""
@@ -12105,7 +12093,7 @@ msgid ""
 "thereof. If no instance is provided, then `start_server` will create one."
 msgstr ""
 
-#: flwr.server.app.start_server:9 flwr.simulation.app.start_simulation:28 of
+#: flwr.server.app.start_server:9 of
 msgid ""
 "Currently supported values are `num_rounds` (int, default: 1) and "
 "`round_timeout` in seconds (float, default: None)."
@@ -15159,16 +15147,16 @@ msgid "simulation"
 msgstr "Simulation de moniteur"
 
 #: ../../source/ref-api/flwr.simulation.rst:18:<autosummary>:1
+#, fuzzy
 msgid ""
-":py:obj:`start_simulation <flwr.simulation.start_simulation>`\\ \\(\\*\\,"
-" client\\_fn\\[\\, ...\\]\\)"
-msgstr ""
+":py:obj:`start_simulation <flwr.simulation.start_simulation>`\\ "
+"\\(\\*args\\, \\*\\*kwargs\\)"
+msgstr "serveur.stratégie.Stratégie"
 
 #: ../../source/ref-api/flwr.simulation.rst:18:<autosummary>:1
-#: flwr.simulation.app.start_simulation:1 of
-#, fuzzy
-msgid "Start a Ray-based Flower simulation server."
-msgstr "Simulation de moniteur"
+#: flwr.simulation.start_simulation:1 of
+msgid "Log error stating that module `ray` could not be imported."
+msgstr ""
 
 #: ../../source/ref-api/flwr.simulation.rst:18:<autosummary>:1
 msgid ""
@@ -15237,120 +15225,6 @@ msgstr ""
 #, fuzzy
 msgid "start\\_simulation"
 msgstr "démarrer_simulation"
-
-#: flwr.simulation.app.start_simulation:3 of
-msgid ""
-"A function creating client instances. The function must take a single "
-"`str` argument called `cid`. It should return a single client instance of"
-" type Client. Note that the created client instances are ephemeral and "
-"will often be destroyed after a single method invocation. Since client "
-"instances are not long-lived, they should not attempt to carry state over"
-" method invocations. Any state required by the instance (model, dataset, "
-"hyperparameters, ...) should be (re-)created in either the call to "
-"`client_fn` or the call to any of the client methods (e.g., load "
-"evaluation data in the `evaluate` method itself)."
-msgstr ""
-
-#: flwr.simulation.app.start_simulation:13 of
-msgid ""
-"The total number of clients in this simulation. This must be set if "
-"`clients_ids` is not set and vice-versa."
-msgstr ""
-
-#: flwr.simulation.app.start_simulation:16 of
-msgid ""
-"List `client_id`s for each client. This is only required if `num_clients`"
-" is not set. Setting both `num_clients` and `clients_ids` with "
-"`len(clients_ids)` not equal to `num_clients` generates an error."
-msgstr ""
-
-#: flwr.simulation.app.start_simulation:20 of
-msgid ""
-"CPU and GPU resources for a single client. Supported keys are `num_cpus` "
-"and `num_gpus`. To understand the GPU utilization caused by `num_gpus`, "
-"as well as using custom resources, please consult the Ray documentation."
-msgstr ""
-
-#: flwr.simulation.app.start_simulation:25 of
-msgid ""
-"An implementation of the abstract base class `flwr.server.Server`. If no "
-"instance is provided, then `start_server` will create one."
-msgstr ""
-
-#: flwr.simulation.app.start_simulation:31 of
-msgid ""
-"An implementation of the abstract base class `flwr.server.Strategy`. If "
-"no strategy is provided, then `start_server` will use "
-"`flwr.server.strategy.FedAvg`."
-msgstr ""
-
-#: flwr.simulation.app.start_simulation:35 of
-msgid ""
-"An implementation of the abstract base class `flwr.server.ClientManager`."
-" If no implementation is provided, then `start_simulation` will use "
-"`flwr.server.client_manager.SimpleClientManager`."
-msgstr ""
-
-#: flwr.simulation.app.start_simulation:39 of
-msgid ""
-"Optional dictionary containing arguments for the call to `ray.init`. If "
-"ray_init_args is None (the default), Ray will be initialized with the "
-"following default args:  { \"ignore_reinit_error\": True, "
-"\"include_dashboard\": False }  An empty dictionary can be used "
-"(ray_init_args={}) to prevent any arguments from being passed to "
-"ray.init."
-msgstr ""
-
-#: flwr.simulation.app.start_simulation:39 of
-msgid ""
-"Optional dictionary containing arguments for the call to `ray.init`. If "
-"ray_init_args is None (the default), Ray will be initialized with the "
-"following default args:"
-msgstr ""
-
-#: flwr.simulation.app.start_simulation:43 of
-msgid "{ \"ignore_reinit_error\": True, \"include_dashboard\": False }"
-msgstr ""
-
-#: flwr.simulation.app.start_simulation:45 of
-msgid ""
-"An empty dictionary can be used (ray_init_args={}) to prevent any "
-"arguments from being passed to ray.init."
-msgstr ""
-
-#: flwr.simulation.app.start_simulation:48 of
-msgid ""
-"Set to True to prevent `ray.shutdown()` in case "
-"`ray.is_initialized()=True`."
-msgstr ""
-
-#: flwr.simulation.app.start_simulation:50 of
-msgid ""
-"Optionally specify the type of actor to use. The actor object, which "
-"persists throughout the simulation, will be the process in charge of "
-"executing a ClientApp wrapping input argument `client_fn`."
-msgstr ""
-
-#: flwr.simulation.app.start_simulation:54 of
-msgid ""
-"If you want to create your own Actor classes, you might need to pass some"
-" input argument. You can use this dictionary for such purpose."
-msgstr ""
-
-#: flwr.simulation.app.start_simulation:57 of
-msgid ""
-"(default: \"DEFAULT\") Optional string (\"DEFAULT\" or \"SPREAD\") for "
-"the VCE to choose in which node the actor is placed. If you are an "
-"advanced user needed more control you can use lower-level scheduling "
-"strategies to pin actors to specific compute nodes (e.g. via "
-"NodeAffinitySchedulingStrategy). Please note this is an advanced feature."
-" For all details, please refer to the Ray documentation: "
-"https://docs.ray.io/en/latest/ray-core/scheduling/index.html"
-msgstr ""
-
-#: flwr.simulation.app.start_simulation:66 of
-msgid "**hist** -- Object containing metrics from training."
-msgstr ""
 
 #: ../../source/ref-changelog.md:1
 msgid "Changelog"
@@ -25253,7 +25127,7 @@ msgstr ""
 "chose d'autre, comme la régression linéaire classique."
 
 #: ../../source/tutorial-series-what-is-federated-learning.ipynb:41
-msgid "|93b02017c78049bbbd5ae456dcb2c91b|"
+msgid "|93da51187d87408481c916612b8d3671|"
 msgstr ""
 
 #: ../../source/tutorial-series-what-is-federated-learning.ipynb:109
@@ -25272,7 +25146,7 @@ msgstr ""
 " Go."
 
 #: ../../source/tutorial-series-what-is-federated-learning.ipynb:53
-msgid "|01471150fd5144c080a176b43e92a3ff|"
+msgid "|7a6e86242ecd41489455ddb45492252a|"
 msgstr ""
 
 #: ../../source/tutorial-series-what-is-federated-learning.ipynb:111
@@ -25303,7 +25177,7 @@ msgstr ""
 "chanson."
 
 #: ../../source/tutorial-series-what-is-federated-learning.ipynb:67
-msgid "|9bc21c7dbd17444a8f070c60786e3484|"
+msgid "|d9d9ef06556a4822a02ba9a02079dd46|"
 msgstr ""
 
 #: ../../source/tutorial-series-what-is-federated-learning.ipynb:113
@@ -25324,7 +25198,7 @@ msgstr ""
 " données pour la même tâche."
 
 #: ../../source/tutorial-series-what-is-federated-learning.ipynb:79
-msgid "|3047bbce54b34099ae559963d0420d79|"
+msgid "|7aa92bb1a53d4a18be6ca9cd8e807b80|"
 msgstr ""
 
 #: ../../source/tutorial-series-what-is-federated-learning.ipynb:115
@@ -25345,7 +25219,7 @@ msgstr ""
 "cloud."
 
 #: ../../source/tutorial-series-what-is-federated-learning.ipynb:91
-msgid "|e9f8ce948593444fb838d2f354c7ec5d|"
+msgid "|3d9a3d3a730744f682f3cd01cc7879e0|"
 msgstr ""
 
 #: ../../source/tutorial-series-what-is-federated-learning.ipynb:117
@@ -25366,7 +25240,7 @@ msgstr ""
 "appuyés."
 
 #: ../../source/tutorial-series-what-is-federated-learning.ipynb:103
-msgid "|c24c1478b30e4f74839208628a842d1e|"
+msgid "|052adfd2f9cb48f2a01ab06deee54ccf|"
 msgstr ""
 
 #: ../../source/tutorial-series-what-is-federated-learning.ipynb:119
@@ -25391,7 +25265,7 @@ msgstr ""
 " sur un serveur centralisé."
 
 #: ../../source/tutorial-series-what-is-federated-learning.ipynb:138
-msgid "|1b3613d7a58847b59e1d3180802dbc09|"
+msgid "|a6aae450ee714e898e7cc173fb154b3d|"
 msgstr ""
 
 #: ../../source/tutorial-series-what-is-federated-learning.ipynb:173
@@ -25410,7 +25284,7 @@ msgstr ""
 "suffisantes pour former un bon modèle."
 
 #: ../../source/tutorial-series-what-is-federated-learning.ipynb:150
-msgid "|9980b5213db547d0b8024a50992b9e3f|"
+msgid "|26ee8c777db64c17b5d504e1d515ed75|"
 msgstr ""
 
 #: ../../source/tutorial-series-what-is-federated-learning.ipynb:175
@@ -25632,7 +25506,7 @@ msgstr ""
 "partir d'un point de contrôle précédemment sauvegardé."
 
 #: ../../source/tutorial-series-what-is-federated-learning.ipynb:210
-msgid "|c7afb4c92d154bfaa5e8cb9a150e17f1|"
+msgid "|ebc06ef5db1b4a60a834ff1c1572833f|"
 msgstr ""
 
 #: ../../source/tutorial-series-what-is-federated-learning.ipynb:307
@@ -25667,7 +25541,7 @@ msgstr ""
 "rendements décroissants."
 
 #: ../../source/tutorial-series-what-is-federated-learning.ipynb:225
-msgid "|032eb6fed6924ac387b9f13854919196|"
+msgid "|47060f2a27ca4b8c9a36c233278bea9b|"
 msgstr ""
 
 #: ../../source/tutorial-series-what-is-federated-learning.ipynb:309
@@ -25700,7 +25574,7 @@ msgstr ""
 "données locales, ou même de quelques étapes (mini-batchs)."
 
 #: ../../source/tutorial-series-what-is-federated-learning.ipynb:240
-msgid "|fbf225add7fd4df5a9bf25a95597d954|"
+msgid "|2746764dfe4a4c8d94c87f2c81aa9c0e|"
 msgstr ""
 
 #: ../../source/tutorial-series-what-is-federated-learning.ipynb:311
@@ -25731,7 +25605,7 @@ msgstr ""
 " l'entraînement local."
 
 #: ../../source/tutorial-series-what-is-federated-learning.ipynb:255
-msgid "|7efbe3d29d8349b89594e8947e910525|"
+msgid "|fc179b92326a42b69dff37fecdd8e9f2|"
 msgstr ""
 
 #: ../../source/tutorial-series-what-is-federated-learning.ipynb:313
@@ -25790,7 +25664,7 @@ msgstr ""
 "times as much as each of the 100 examples."
 
 #: ../../source/tutorial-series-what-is-federated-learning.ipynb:273
-msgid "|329fb3c04c744eda83bb51fa444c2266|"
+msgid "|d0720797ae4744beb29dfd44567a12d2|"
 msgstr ""
 
 #: ../../source/tutorial-series-what-is-federated-learning.ipynb:315
@@ -25933,7 +25807,7 @@ msgstr ""
 "quel cadre de ML et n'importe quel langage de programmation."
 
 #: ../../source/tutorial-series-what-is-federated-learning.ipynb:334
-msgid "|c00bf2750bc24d229737a0fe1395f0fc|"
+msgid "|c177906dcd404631b9bf0a670355740b|"
 msgstr ""
 
 #: ../../source/tutorial-series-what-is-federated-learning.ipynb:340
@@ -32380,5 +32254,120 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "|83a8daee45da4a98b8d6f24ae098fc50|"
+#~ msgstr ""
+
+#~ msgid "run\\_driver\\_api"
+#~ msgstr "flower-driver-api"
+
+#~ msgid "run\\_fleet\\_api"
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":py:obj:`start_simulation <flwr.simulation.start_simulation>`\\"
+#~ " \\(\\*\\, client\\_fn\\[\\, ...\\]\\)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "A function creating client instances. "
+#~ "The function must take a single "
+#~ "`str` argument called `cid`. It should"
+#~ " return a single client instance of"
+#~ " type Client. Note that the created"
+#~ " client instances are ephemeral and "
+#~ "will often be destroyed after a "
+#~ "single method invocation. Since client "
+#~ "instances are not long-lived, they "
+#~ "should not attempt to carry state "
+#~ "over method invocations. Any state "
+#~ "required by the instance (model, "
+#~ "dataset, hyperparameters, ...) should be "
+#~ "(re-)created in either the call to "
+#~ "`client_fn` or the call to any of"
+#~ " the client methods (e.g., load "
+#~ "evaluation data in the `evaluate` method"
+#~ " itself)."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "CPU and GPU resources for a single"
+#~ " client. Supported keys are `num_cpus` "
+#~ "and `num_gpus`. To understand the GPU"
+#~ " utilization caused by `num_gpus`, as "
+#~ "well as using custom resources, please"
+#~ " consult the Ray documentation."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Optionally specify the type of actor "
+#~ "to use. The actor object, which "
+#~ "persists throughout the simulation, will "
+#~ "be the process in charge of "
+#~ "executing a ClientApp wrapping input "
+#~ "argument `client_fn`."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If you want to create your own "
+#~ "Actor classes, you might need to "
+#~ "pass some input argument. You can "
+#~ "use this dictionary for such purpose."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "(default: \"DEFAULT\") Optional string "
+#~ "(\"DEFAULT\" or \"SPREAD\") for the VCE"
+#~ " to choose in which node the "
+#~ "actor is placed. If you are an "
+#~ "advanced user needed more control you"
+#~ " can use lower-level scheduling "
+#~ "strategies to pin actors to specific "
+#~ "compute nodes (e.g. via "
+#~ "NodeAffinitySchedulingStrategy). Please note this"
+#~ " is an advanced feature. For all "
+#~ "details, please refer to the Ray "
+#~ "documentation: https://docs.ray.io/en/latest/ray-"
+#~ "core/scheduling/index.html"
+#~ msgstr ""
+
+#~ msgid "|93b02017c78049bbbd5ae456dcb2c91b|"
+#~ msgstr ""
+
+#~ msgid "|01471150fd5144c080a176b43e92a3ff|"
+#~ msgstr ""
+
+#~ msgid "|9bc21c7dbd17444a8f070c60786e3484|"
+#~ msgstr ""
+
+#~ msgid "|3047bbce54b34099ae559963d0420d79|"
+#~ msgstr ""
+
+#~ msgid "|e9f8ce948593444fb838d2f354c7ec5d|"
+#~ msgstr ""
+
+#~ msgid "|c24c1478b30e4f74839208628a842d1e|"
+#~ msgstr ""
+
+#~ msgid "|1b3613d7a58847b59e1d3180802dbc09|"
+#~ msgstr ""
+
+#~ msgid "|9980b5213db547d0b8024a50992b9e3f|"
+#~ msgstr ""
+
+#~ msgid "|c7afb4c92d154bfaa5e8cb9a150e17f1|"
+#~ msgstr ""
+
+#~ msgid "|032eb6fed6924ac387b9f13854919196|"
+#~ msgstr ""
+
+#~ msgid "|fbf225add7fd4df5a9bf25a95597d954|"
+#~ msgstr ""
+
+#~ msgid "|7efbe3d29d8349b89594e8947e910525|"
+#~ msgstr ""
+
+#~ msgid "|329fb3c04c744eda83bb51fa444c2266|"
+#~ msgstr ""
+
+#~ msgid "|c00bf2750bc24d229737a0fe1395f0fc|"
 #~ msgstr ""
 
