@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: Automatically update mergeable PRs
-        uses: adRise/update-pr-branch@cd305ecbd76bf63056c9400ce2c725293fc3e0c0 # v0.7.0
+        uses: adRise/update-pr-branch@e96e796f4ab23ab388016fdaed7092de99bd71cf # v0.11.1
         with:
           token: ${{ secrets.FLWRMACHINE_TOKEN }}
           base: 'main'
